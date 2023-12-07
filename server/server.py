@@ -199,7 +199,7 @@ def decorate(response, name):
 #PATCH /fingerprint/name image,region
 #DELETE /fingerprint/name
 
-#GET /match image, region, distance, limit
+#POST /match image, region, distance, limit
 #GET /match/id region, distance, limit
 
 def uuid_by_name(name) -> str:
