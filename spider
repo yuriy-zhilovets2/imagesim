@@ -1,0 +1,12 @@
+#!/bin/bash
+
+DIR=$1
+if [ -z $DIR ];
+then
+  echo "Usage: ./spider <directory>"
+  exit 1
+fi
+
+find $1 -name "*" -type f | while read fname; do
+  curl -i -X PUT -F "image=@$fname" -F region=1 http://localhost:8000/fingerprint/${fname//[\/ ]/_}
+done
